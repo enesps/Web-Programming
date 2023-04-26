@@ -1,0 +1,57 @@
+
+
+       
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Fruit Game</title>
+          <style>
+            img {
+              width: 100px;
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>Fruit Game</h1>
+          <p>Score: <span id="score">0</span></p>
+          <div id="gameboard"></div>
+        
+          <script>
+
+         var fruits = ['./assets/img/ananas.jpeg', './assets/img/banana.png', './assets/img/orange.png', './assets/img/pear.png'];
+            // Get the gameboard element
+            var gameboard = document.getElementById('gameboard');
+        
+            // Initialize the score variable
+            var score = 0;
+        
+            // Add event listeners to the fruit images
+            for (var i = 0; i < fruits.length; i++) {
+              createFruit(fruits[i]);
+            }
+        
+            function createFruit(fruitSrc) {
+              var fruit = new Image();
+              fruit.src = fruitSrc;
+              fruit.addEventListener('click', function() {
+                score++;
+                document.getElementById('score').textContent = score;
+                this.remove(); // remove the clicked fruit
+                if (score >= 15) {
+                  alert('Congratulations, you won!');
+                }
+                createFruit(fruits[Math.floor(Math.random() * fruits.length)]); // create a new random fruit
+              });
+              gameboard.appendChild(fruit);
+              // Position the fruit randomly within the gameboard
+              fruit.style.left = Math.floor(Math.random() * (gameboard.offsetWidth - fruit.width)) + 'px';
+              fruit.style.top = Math.floor(Math.random() * (gameboard.offsetHeight - fruit.height)) + 'px';
+            }
+          </script>
+        </body>
+        </html>
+        
+        
