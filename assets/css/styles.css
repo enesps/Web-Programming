@@ -116,9 +116,15 @@ body {
   .dev-icons {
     font-size: 3rem;
   }
+  .back{
+    /*background-image: url("../img/4428861.jpg");*/
+    
+    background-size: contain;
+  }
   
   section.resume-section {
     display: flex;
+    
     align-items: center;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -267,3 +273,152 @@ body {
     font-size: 30px;
     }
 
+    .home-button {
+      text-align: center; /* Butonu ortala */
+      margin-top: 30px; /* Üst boşluk ekleyerek butonu biraz aşağı çek */
+    }
+    .btn {
+    
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    }
+    
+    .btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    }
+    
+    .btn:before {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    }
+    
+    .btn-2 {
+    
+    background: #455d7a;
+    color: #fff;
+    box-shadow: 0 6px #455d7a;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+    }
+    
+    .btn-2a {
+    width: 80px;
+    height: 40px;
+    
+    margin: 10px auto;
+    border-radius: 20%;
+    }
+    
+    .btn-2a:hover {
+    box-shadow: 0 4px #455d7a;
+    top: 2px;
+    }
+    @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+body {
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	color: #89867e;
+	background: #f9f9f9;
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+a img {
+    border: none;
+    
+}
+
+.caption {
+    -webkit-backface-visibility: hidden; /* prevent flash when embedding fiddle */
+	display: inline-block;
+	position: relative;
+	margin: 10px;
+	overflow: hidden;
+	background: #000;
+}
+
+.caption img {
+	display: block;
+	max-width: 100%;
+	-webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.caption:hover img {
+	opacity: 0.5;
+}
+
+.caption::after,
+.caption::before {
+	position: absolute;
+	width: 100%;
+	height: 50%;
+	color: #fff;
+    z-index: 1;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out; 
+	-moz-transition: -moz-transform 0.3s ease-in-out; 
+	transition: transform 0.3s ease-in-out; 
+}
+
+.caption::after {
+	content: attr(data-title);
+	top: 0;
+	background: #455d7a;
+	font-size: 40px;
+	font-weight: 300;
+	padding: 30px;
+	-webkit-transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	transform: translateY(-100%);
+}
+
+.caption::before {
+	content: '...' attr(data-description) '...';
+	top: 50%;
+	background: #455d7a;
+	font-size: 14px;
+	padding: 20px;
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	transform: translateY(100%);
+}
+
+.caption:hover::after,
+.caption:hover::before {
+	-webkit-transform: translateY(0%);
+	-moz-transform: translateY(0%);
+	transform: translateY(0%);
+}
